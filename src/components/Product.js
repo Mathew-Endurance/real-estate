@@ -3,31 +3,32 @@ import styled from "styled-components";
 import { formatPrice } from "../utils/helpers";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
 const Product = ({ image, name, price, id, category }) => {
   return (
     <Wrapper>
       <div className="container">
+        <button className="sale_btn btn ">{category}</button>
         <img src={image} alt={name} />
-        <button className="sale_btn ">{category}</button>
 
-        <Link to={`/listings/${id}`} className="link">
+        <Link to={`/listing/${id}`} className="link">
           <FaSearch />
         </Link>
       </div>
       <footer>
         <h5>{name}</h5>
-        <p>{formatPrice(price)} </p>
+        <p>{formatPrice(price)}</p>
       </footer>
     </Wrapper>
   );
 };
-
 const Wrapper = styled.article`
   .container {
     position: relative;
     background: var(--clr-black);
     border-radius: var(--radius);
+  }
+  .sale_btn {
+    position: absolute;
   }
   img {
     width: 100%;
@@ -56,7 +57,6 @@ const Wrapper = styled.article`
       color: var(--clr-white);
     }
   }
-
   .container:hover img {
     opacity: 0.5;
   }

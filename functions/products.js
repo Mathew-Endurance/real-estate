@@ -8,8 +8,8 @@ const airtable = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY })
 exports.handler = async (event, context, cb) => {
   try {
     const response = await airtable.list({ maxRecords: 200 });
-    const listings = response.records.map((listing) => {
-      const { id, fields } = listing;
+    const products = response.records.map((product) => {
+      const { id, fields } = product;
       const {
         name,
         images,
@@ -43,11 +43,9 @@ exports.handler = async (event, context, cb) => {
       };
     });
 
-    console.log(listings);
-
     return {
       statusCode: 200,
-      body: JSON.stringify(listings),
+      body: JSON.stringify(products),
     };
   } catch (error) {
     console.log(error);

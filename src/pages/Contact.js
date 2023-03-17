@@ -5,30 +5,15 @@ import { AiOutlineMail } from "react-icons/ai";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { FaAddressBook } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import "./contact.css";
+
 import { PageHero } from "../components";
 
 // import "./contact.css";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 
-import { ToastContainer, toast } from "react-toastify";
-
-import "react-toastify/dist/ReactToastify.css";
-
-// import styled from "styled-components";
-
 const Contact = () => {
-  // const [formData, setFormData] = useState({ name: "" });
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   if (!FormData.name) {
-  //     toast.error("please enter your name");
-  //     return;
-  //   }
-  // };
-  // const handleChange = (e) => {
-  //   setFormData({ ...formData, [e.target.name]: e.target.value });
-  // };
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
@@ -58,21 +43,15 @@ const Contact = () => {
   // };
   return (
     <Wrapper>
-      <PageHero title="contact us" />
+      <PageHero title="contact us" className="heros" />
       <section className="contact">
-        <div className="content">
-          {/* <Link to="/listing" className="btn">
-            back to listings
-          </Link>
-          <h2>contact us</h2> */}
-        </div>
         <div className="container">
           <div className="contactInfo">
-            <h2 className="cont">
+            <h2>
               Register your Interest Fill out the form, or call us to Schedule
               an inspection.
             </h2>
-
+            <div className="underline"></div>
             {/* address */}
             <div className="box">
               <div className="icon">
@@ -129,8 +108,9 @@ const Contact = () => {
               </div>
 
               {/* text area */}
-              <div className="inputBox" required="required">
+              <div className="inputBox">
                 <textarea
+                  required="required"
                   name="user_message"
                   id=""
                   cols="30"
@@ -141,7 +121,7 @@ const Contact = () => {
 
               {/* submit button */}
               <div className="inputBox">
-                <input type="submit" value="send" />
+                <input type="submit" value="send" className="btn" />
                 {/* <ToastContainer /> */}
               </div>
             </form>
@@ -159,9 +139,7 @@ const Wrapper = styled.section`
     box-sizing: border-box;
     font-family: sans-serif, "Poppins";
   }
-  .cont{
-    margin-top:-11%;
-  }
+
   .contact {
     position: relative;
     min-height: 100vh;
@@ -172,6 +150,11 @@ const Wrapper = styled.section`
     flex-direction: column;
     margin-top: -5%;
   }
+  h2 {
+    text-transform: none;
+    /* font-weight: 500;
+    font-size: 25px; */
+  }
   .contact .content {
     min-width: 800px;
     text-align: center;
@@ -179,11 +162,9 @@ const Wrapper = styled.section`
 
   .contact .content h2 {
     font-size: 25px;
-    margin-top:-10%
-    font-weight: 500;
+
+    font-weight: 300;
     color: #333;
-    
-    
   }
 
   .contact .content p {
@@ -202,8 +183,8 @@ const Wrapper = styled.section`
     width: 50%;
     display: flex;
     flex-direction: column;
+    margin-top: 3%;
   }
-
 
   .container .contactInfo .box {
     position: relative;
@@ -214,7 +195,7 @@ const Wrapper = styled.section`
   .container .contactInfo .box .icon {
     min-width: 60px;
     height: 60px;
-    background: 'whitesmoke';
+    background: var(--clr-primary-10);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -231,9 +212,8 @@ const Wrapper = styled.section`
   }
 
   .container .contactInfo .box .text h3 {
-    font-weight: 500;
+    font-weight: 300;
     color: blanchedalmond;
-    
   }
 
   .contactForm {
@@ -242,10 +222,8 @@ const Wrapper = styled.section`
     background: whitesmoke;
   }
   .contactForm h2 {
-    
     color: #333;
     font-weight: 500;
-
   }
   .contactForm .inputBox {
     position: relative;
@@ -257,7 +235,7 @@ const Wrapper = styled.section`
   .contactForm .inputBox textarea {
     width: 100%;
     padding: 10px 0;
-    font-style: 16px;
+    font-style: 20px;
     margin: 10px 0;
     border: none;
     border-bottom: 2px solid #333;
@@ -269,7 +247,7 @@ const Wrapper = styled.section`
     position: absolute;
     left: 0;
     padding: 5px 0;
-    font-size: 16px;
+    font-size: 22px;
     margin: 10px 0;
     pointer-events: none;
     transition: 0.5s;
@@ -280,13 +258,13 @@ const Wrapper = styled.section`
   .contactForm .inputBox textarea:focus ~ span,
   .contactForm .inputBox textarea:valid ~ span {
     color: #e91e63;
-    font-size: 12px;
+    font-size: 15px;
     transform: translateY(-20px);
   }
 
   .contactForm .inputBox input[type="submit"] {
     width: 100px;
-    background: #00bcd4;
+
     color: whitesmoke;
     border: none;
     cursor: pointer;
@@ -295,7 +273,7 @@ const Wrapper = styled.section`
   }
   @media (max-width: 991px) {
     .contact {
-      padding: 50px;
+      padding: 0px 12px;
     }
     .container {
       flex-direction: column;
@@ -306,6 +284,9 @@ const Wrapper = styled.section`
     .container .contactInfo,
     .contactForm {
       width: 100%;
+    }
+    h2 {
+      font-size: 22px;
     }
   }
 `;

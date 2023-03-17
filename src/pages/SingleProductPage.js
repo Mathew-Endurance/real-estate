@@ -4,15 +4,7 @@ import { useProductsContext } from "../context/products_context";
 import { single_product_url as url } from "../utils/constants";
 import { formatPrice } from "../utils/helpers";
 import { TbBath } from "react-icons/tb";
-import {
-  Loading,
-  Error,
-  Login,
-  ProductImages,
-  AddToCart,
-  Stars,
-  PageHero,
-} from "../components";
+import { Loading, Error, ProductImages, PageHero } from "../components";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -105,10 +97,6 @@ const SingleProductPage = () => {
             <Link to="/contact" className="btn">
               Appointment
             </Link>
-
-           
-                
-
           </section>
         </div>
       </div>

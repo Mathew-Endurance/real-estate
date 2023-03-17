@@ -12,7 +12,7 @@ import ProductImages from "./ProductImages";
 
 import Filters from "./Filters";
 import ProductList from "./ProductList";
-import Sort from "./Sort";
+import Sorts from "./Sorts";
 import Login from "./Login";
 import Stars from "./Stars";
 import Alert from "./Alert";
@@ -33,8 +33,7 @@ export {
   Filters,
   Alert,
   ProductList,
-  Sort,
+  Sorts,
   Stars,
   PageHero,
-  Login,
 };

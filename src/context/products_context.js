@@ -21,7 +21,7 @@ const initialState = {
   featured_products: [],
   single_product_loading: false,
   single_product_error: false,
-  single_product: [],
+  single_product: {},
 };
 
 const ProductsContext = React.createContext();
@@ -45,7 +45,6 @@ export const ProductsProvider = ({ children }) => {
     } catch (error) {
       dispatch({ type: GET_PRODUCTS_ERROR });
     }
-    console.log(url);
   };
 
   const fetchSingleProduct = async (url) => {

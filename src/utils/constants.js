@@ -45,6 +45,6 @@ export const services = [
   },
 ];
 
-export const single_product_url = `/.netlify/functions/single-listing?id=`;
+export const single_product_url = `/.netlify/functions/single-product?id=`;
 
-export const products_url = "/.netlify/functions/listings";
+export const products_url = "/.netlify/functions/products";

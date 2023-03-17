@@ -10,15 +10,15 @@ const ListView = ({ products }) => {
         return (
           <article key={id}>
             <div className="container">
+              <button className="sale_btn btn">{category}</button>
               <img src={image} alt={name} />
-              <button className="sale_btn">{category}</button>
             </div>
 
             <div className="">
               <h4>{name}</h4>
               <h5 className="price">{formatPrice(price)}</h5>
               <p>{description.substring(0, 150)}...</p>
-              <Link to={`/product/${id}`} className="btn">
+              <Link to={`/listing/${id}`} className="btn">
                 Details
               </Link>
             </div>
@@ -39,6 +39,9 @@ const Wrapper = styled.section`
     height: 220px;
 
     border-radius: var(--radius);
+  }
+  .sale_btn {
+    position: absolute;
   }
 
   img {

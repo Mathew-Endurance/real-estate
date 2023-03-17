@@ -1,5 +1,10 @@
-* {
-  margin: 0;
+.heros {
+  padding: 12px;
+  color: blue;
+}
+
+/* * {
+  margin: 0; 
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif, "Poppins";
@@ -142,4 +147,4 @@
   .contactForm {
     width: 100%;
   }
-}
+} */

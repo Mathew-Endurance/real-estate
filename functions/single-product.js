@@ -10,18 +10,18 @@ exports.handler = async (event, context, cb) => {
   const { id } = event.queryStringParameters;
   if (id) {
     try {
-      let listing = await airtable.retrieve(id);
-      if (listing.error) {
+      let product = await airtable.retrieve(id);
+      if (product.error) {
         return {
           statusCode: 404,
           body: `no listing with id: ${id}`,
         };
       }
-      listing = { id: listing.id, ...listing.fields };
-      console.log(listing);
+      product = { id: product.id, ...product.fields };
+
       return {
         statusCode: 200,
-        body: JSON.stringify(listing),
+        body: JSON.stringify(product),
       };
     } catch (error) {
       return {

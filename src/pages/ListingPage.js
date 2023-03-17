@@ -1,16 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import { Filters, ProductList, Sort, PageHero } from "../components";
+import { Filters, ProductList, Sorts, PageHero } from "../components";
 
-const Listings = () => {
+const Products = () => {
   return (
     <main>
       <PageHero title="listing" />
       <Wrapper className="page">
         <div className="section-center products">
           <Filters />
-          <div className="">
-            <Sort />
+          <div>
+            <Sorts />
             <ProductList />
           </div>
         </div>
@@ -32,4 +32,4 @@ const Wrapper = styled.div`
   }
 `;
 
-export default Listings;
+export default Products;

@@ -21,7 +21,7 @@ const Nav = () => {
               <span>
                 <BsFillHouseDoorFill />
               </span>
-              meLand
+              meland
             </h3>
           </Link>
           <button type="button" className="nav-toggle" onClick={openSidebar}>
@@ -54,6 +54,9 @@ const NavContainer = styled.nav`
     margin: 0 auto;
     max-width: var(--max-width);
   }
+  span {
+    color: red;
+  }
   .nav-header {
     display: flex;
     align-items: center;
@@ -74,6 +77,9 @@ const NavContainer = styled.nav`
   }
   .nav-links {
     display: none;
+  }
+  h3 {
+    text-transform: none;
   }
 
   @media (min-width: 992px) {
